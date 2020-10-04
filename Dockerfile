@@ -4,7 +4,8 @@ RUN apt update
 RUN apt install -y wget dialog net-tools
 RUN apt install -y nginx
 
-Add nginx.conf /etc/nginx.conf
+RUN rm -v /etc/nginx/nginx.conf
+ADD nginx.conf /etc/nginx/
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 EXPOSE 80
